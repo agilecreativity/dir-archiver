@@ -10,9 +10,9 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Archive multiple directories having a given depth from a given starting directory}
   spec.description   = %q(
     Archive all directories having the given depth from a given directory.
-    TL;DR: `dir-archiver --input-dir ~/projects --depth 2 --seperator "__" -output-dir ~/archives --commit`
+    TL;DR: dir-archiver --input-dir ~/projects --depth 2 --seperator "__" --output-dir ~/archives --commit
     ).gsub(/^\s+/, " ")
-  spec.homepage      = 'https://github.com/agilecreativity/dir_archiver'
+  spec.homepage      = 'https://github.com/agilecreativity/dir-archiver'
   spec.required_ruby_version = ">= 2.0.0"
   spec.license       = 'MIT'
   spec.files         = Dir.glob('{bin,lib,spec,test}/**/*') + %w(Gemfile
@@ -23,11 +23,10 @@ Gem::Specification.new do |spec|
                                                                  LICENSE
                                                                  .rubocop.yml
                                                                  .gitignore)
+
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
-
-  #spec.add_runtime_dependency 'github_api', '~> 0.13'
 
   spec.add_development_dependency 'awesome_print', '~> 1.6'
   spec.add_development_dependency 'bundler', '~> 1.10'
@@ -37,7 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.6'
   spec.add_development_dependency 'minitest-spec-context', '~> 0.0'
   spec.add_development_dependency 'pry', '~> 0.10'
-  spec.add_development_dependency 'pry-byebug', '~> 3.1' #if RUBY_VERSION >= '2.0.0'
+  spec.add_development_dependency 'pry-byebug', '~> 3.1'
   spec.add_development_dependency 'rake', '~> 10.4'
   spec.add_development_dependency 'rubocop', '~> 0.31'
   spec.add_development_dependency 'yard', '~> 0.8'
