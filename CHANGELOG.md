@@ -1,5 +1,9 @@
 ### Changelogs
 
+#### 0.1.3
+
+- Make it work with the directory that contain spaces
+
 #### 0.1.2
 
 - Fix the link to the source in the gemspec
