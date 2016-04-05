@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Archive multiple directories having a given depth from a given starting directory}
   spec.description   = %q(
     Archive all directories having the given depth from a given directory.
-    TL;DR: `dir-archiver --input-dir ~/projects --depth 2 --sep "__" -output-dir ~/archives --commit`
+    TL;DR: `dir-archiver --input-dir ~/projects --depth 2 --seperator "__" -output-dir ~/archives --commit`
     ).gsub(/^\s+/, " ")
   spec.homepage      = 'https://github.com/agilecreativity/dir_archiver'
   spec.required_ruby_version = ">= 2.0.0"

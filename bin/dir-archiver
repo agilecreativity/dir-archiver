@@ -11,8 +11,6 @@ include DirArchiver
 # Show help if user forgot to type anything
 opts = OptParser.parse(ARGV)
 
-puts "Your options : #{opts}"
-
 DirArchiver::archive(opts.input_dir,
                      opts.depth,
                      opts.seperator,
