@@ -10,7 +10,7 @@ module DirArchiver
       # Set the sensible default for the options explicitly
       options.input_dir  = "."
       options.depth = 1
-      options.seperator = "--"
+      options.seperator = "__"
       options.output_dir = "."
       options.commit = false
 
@@ -36,7 +36,7 @@ module DirArchiver
 
         opts.on("-s", "--seperator [SEP]",
                 "The seperator string to be used",
-                "If not specified, '--' will be used") do |sep|
+                "If not specified, '__' will be used") do |sep|
           options.seperator = sep
         end
 
@@ -58,14 +58,23 @@ module DirArchiver
         # No argument, shows at tail.  This will print an options summary.
         opts.on_tail("-h", "--help", "Show this message") do
           puts opts
-          puts "Example Usage:"
-          puts ""
-          puts "a) archive all directory 2 level depth (dry-run)"
-          puts "dir-archiver -i ~/inputs/projects -d 2 -s '__' -o ~/outputs/archives"
-          puts ""
-          puts "b) archive all directory 2 level depth (commit action)"
-          puts "dir-archiver -i ~/inputs/projects -d 2 -s '__' -o ~/outputs/archives"
-          puts ""
+          puts <<-EOT.gsub(/^\s+\|/, "")
+            |
+            | Example Usage:
+            |
+            | a) archive all immediate directories from the given directory (default to 1 level)
+            |
+            | $cd ~/inputs/projects
+            | $dir-archiver --commit
+            |
+            | b) archive all directory 2 level depth (dry-run)
+            |
+            | $dir-archiver -i ~/inputs/projects -d 2 -s '__' -o ~/outputs/archives
+            |
+            | c) archive all directory 2 level depth (commit action)
+            |
+            | $dir-archiver -i ~/inputs/projects -d 2 -s '__' -o ~/outputs/archives
+          EOT
           exit
         end
       end

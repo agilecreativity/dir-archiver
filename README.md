@@ -25,7 +25,6 @@ github_archiver
 You should see something like
 
 ```
-
 Usage: dir-archiver [options]
 
 Specific options:
@@ -34,7 +33,7 @@ Specific options:
     -d, --depth NUMBER               where NUMBER is depth of the directory from the starting directory
                                      If not specified, 1 will be used
     -s, --seperator [SEP]            The seperator string to be used
-                                     If not specified, '--' will be used
+                                     If not specified, '__' will be used
     -o, --output-dir OUTPUT_DIR      where OUTPUT_DIR is output directory
                                      If not specified, current directory will be used
     -c, --[no-]commit                Commit your action
@@ -42,13 +41,21 @@ Specific options:
 
 Common options:
     -h, --help                       Show this message
-Example Usage:
 
-a) archive all directory 2 level depth (dry-run)
-dir-archiver -i ~/inputs/projects -i . -d 2 -s '__' -o ~/outputs/archives
+ Example Usage:
 
-b) archive all directory 2 level depth (commit action)
-dir-archiver -i ~/inputs/projects -i . -d 2 -s '__' -o ~/outputs/archives
+ a) archive all immediate directories from the given directory (default to 1 level)
+
+ $cd ~/inputs/projects
+ $dir-archiver --commit
+
+ b) archive all directory 2 level depth (dry-run)
+
+ $dir-archiver -i ~/inputs/projects -d 2 -s '__' -o ~/outputs/archives
+
+ c) archive all directory 2 level depth (commit action)
+
+ $dir-archiver -i ~/inputs/projects -d 2 -s '__' -o ~/outputs/archives
 ```
 
 ### Contributing

@@ -1,5 +1,10 @@
 ### Changelogs
 
+#### 0.1.4
+
+- Improve the sample usage to make it more clear
+- Make double dashes `__` the default seperator
+
 #### 0.1.3
 
 - Make it work with the directory that contain spaces
