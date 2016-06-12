@@ -1,5 +1,9 @@
 ### Changelogs
 
+#### 0.1.5
+
+- Use -maxdepth n -mindepth n instead of -depth n to make it work better with Linux
+
 #### 0.1.4
 
 - Improve the sample usage to make it more clear

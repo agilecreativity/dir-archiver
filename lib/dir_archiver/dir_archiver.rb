@@ -17,8 +17,9 @@ module DirArchiver
       # Create one if the output directory is not exist!
       FileUtils.mkdir_p(output_path) unless File.exists?(output_path) && File.directory?(output_path)
 
-      # Get the result from the result of `find` command
-      result = `find '#{input_path}' -type d -depth #{depth}`
+      ## Get the result from the result of `find` command
+      result = `find '#{input_path}' -mindepth #{depth} -maxdepth #{depth} -type d`
+
       return if result && result.empty?
 
       files = result.split("\n").map { |i| i.gsub(input_path, ".") }
